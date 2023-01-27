@@ -58,6 +58,16 @@ jobs:
         sudo -E apt-get -qq install $(curl -fsSL raw.githubusercontent.com/caonimagfw/Actions-K2P/openwrt/depend-2004)
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
+        wget https://www.openssl.org/source/openssl-1.1.1s.tar.gz
+        tar -xzvf openssl-1.1.1s.tar.gz
+        cd openssl-1.1.1s && ./config
+        make 
+        sudo make install
+        sudo ln -s /usr/local/bin/openssl /usr/bin/openssl
+        sudo echo "/usr/local/lib" >> /etc/ld.so.conf 
+        ldconfig 
+        openssl version
+        cd ..
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
