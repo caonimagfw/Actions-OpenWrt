@@ -63,9 +63,9 @@ jobs:
         cd openssl-1.1.1s && ./config
         make 
         sudo make install
-        sudo ln -s /usr/local/bin/openssl /usr/bin/openssl
-        sudo echo "/usr/local/lib" >> /etc/ld.so.conf 
-        ldconfig 
+        # sudo ln -s /usr/local/bin/openssl /usr/bin/openssl
+        # sudo echo "/usr/local/lib" >> /etc/ld.so.conf 
+        # ldconfig 
         openssl version
         cd ..
         sudo timedatectl set-timezone "$TZ"
