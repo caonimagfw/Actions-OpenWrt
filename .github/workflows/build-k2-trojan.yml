@@ -62,6 +62,7 @@ jobs:
   
         openssl version
         which openssl
+        echo $OPENSSL_ROOT_DIR
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
