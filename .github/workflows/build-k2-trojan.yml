@@ -61,7 +61,6 @@ jobs:
         # sudo -E apt-get -qq clean
   
         openssl version
-        cd ..
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
