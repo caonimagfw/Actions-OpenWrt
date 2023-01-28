@@ -65,6 +65,13 @@ jobs:
         sudo make install
         # sudo ln -s /usr/local/bin/openssl /usr/bin/openssl
         # sudo echo "/usr/local/lib" >> /etc/ld.so.conf 
+        OPENSSL_ROOT_DIR=/usr/local/ssl
+        OPENSSL_CRYPTO_LIBRARY=/usr/local/ssl/lib
+        OPENSSL_INCLUDE_DIR=/usr/local/ssl/include
+
+        export OPENSSL_ROOT_DIR
+        export OPENSSL_CRYPTO_LIBRARY
+        export OPENSSL_INCLUDE_DIR
         sudo ldconfig 
         openssl version
         cd ..
